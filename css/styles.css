@@ -1,0 +1,162 @@
+/**
+  * EXERCISE 1 (not mobile-first)
+*/
+:root {
+  --space: 15px;
+  --space-tablet: 18px;
+  --black: #000;
+}
+
+.container {
+  margin: 50px 10px 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+header, .content, footer {
+  margin-bottom: var(--space);
+  border: 10px solid var(--black);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space);
+  background-color: #333;
+  border-bottom: 5px solid var(--black);
+}
+
+.nav-left, .nav-middle, .nav-right {
+  height: var(--space);
+  background: lightcoral;
+}
+
+.nav-left, .nav-right {
+  width: 18%;
+}
+
+.nav-middle {
+  width: 60%;
+}
+
+.subheader {
+  padding: var(--space);
+  background-color: darkorange;
+  border-top: 3px solid var(--black);
+}
+
+.subheader-innerbox {
+  height: var(--space);
+  background-color: lightgoldenrodyellow;
+}
+
+.content {
+  display: flex;
+  margin-bottom: var(--space);
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 70%;
+  padding: var(--space);
+  background-color: lightslategray;
+  border-right: 10px solid var(--black);
+}
+
+.section-sm {
+  width: 48%;
+  height: var(--space);
+  margin-bottom: 10px;
+  background-color: blue;
+}
+
+.section-lg {
+  width: 100%;
+  height: var(--space);
+  background-color: lightblue;
+}
+
+aside {
+  width: 30%;
+  padding: var(--space);
+  background-color: lightcoral;
+}
+
+.aside-innerbox {
+  height: var(--space);
+  margin-bottom: 6px;
+  background-color: lightgoldenrodyellow;
+}
+
+.footer-innerbox {
+  height: var(--space);
+  background-color: yellow;
+}
+
+/**
+  * EXERCISE 2
+*/
+@media only screen and (max-width: 768px) {
+  .container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  header, footer {
+    border-width: var(--space-tablet);
+  }
+
+  .content {
+    border: var(--space-tablet) solid yellowgreen;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  section, aside {
+    width: calc(100% - 30px);
+  }
+
+  section {
+    border-right: none;
+    border-bottom: var(--space-tablet) solid yellowgreen;
+  }
+}
+
+
+/**
+  * EXERCISE 3
+*/
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    border-bottom-width: var(--space-tablet);
+  }
+
+  .nav-left, .nav-middle {
+    width: 100%;
+    margin-bottom: var(--space-tablet);
+  }
+
+  .nav-right {
+    width: 100%;
+    margin-bottom: none;
+  }
+
+  .section-sm {
+    width: 100%;
+  }
+
+  aside {
+    background-color: darkorange;
+  }
+
+  .aside-innerbox {
+    background-color: yellow;
+  }
+}
